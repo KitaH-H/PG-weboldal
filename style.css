@@ -203,3 +203,40 @@ header {
 .kartya-link::after {
     content: ' →';
 }
+
+.tortenet-resz {
+    background-color: var(--hatter-szurke);
+    padding: 90px 40px;
+}
+
+.tortenet-tartalom {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.tortenet-kep {
+    flex: 1;
+    border-radius: 20px;
+    height: 420px;
+    background-image: url('tortenet.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tortenet-szoveg {
+    flex: 1;
+}
+
+.tortenet-szoveg h2 {
+    font-size: 38px;
+    color: var(--pg-kek);
+}
+
+.tortenet-szoveg p {
+    font-size: 16px;
+    color: var(--szoveg-szurke);
+    line-height: 1.8;
+}
