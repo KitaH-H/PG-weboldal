@@ -44,6 +44,8 @@ header {
     gap: 12px;
     font: 700 18px var(--betutipus);
     color: var(--pg-kek);
+    
+    text-shadow: 0px 0px 5px var(--pg-arany);
 }
 .logo-terulet img { height: 42px; width: auto; }
 
