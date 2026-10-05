@@ -1,0 +1,78 @@
+:root {
+    --pg-kek: #002c5f;
+    --pg-arany: #c5a059;
+    --szoveg-sotet: #111111;
+    --szoveg-szurke: #555555;
+    --hatter-vilagos: #ffffff;
+    --hatter-szurke: #f8f9fa;
+    --betutipus: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--betutipus);
+    margin: 0;
+    padding: 0;
+    color: var(--szoveg-sotet);
+    background-color: var(--hatter-vilagos);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(71, 75, 141, 0.492);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #eaeaea;
+    backdrop-filter: blur(10px);
+}
+
+.fejlec-tartalom {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+}
+
+.logo-terulet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--pg-kek);
+}
+
+.logo-terulet img {
+    height: 42px;
+    width: auto;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.jelentkezes-gomb {
+    background-color: var(--pg-kek);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
