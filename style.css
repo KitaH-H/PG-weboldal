@@ -1,14 +1,14 @@
-:root {
+:root{
     --pg-kek: #002c5f;
     --pg-arany: #c5a059;
     --szoveg-sotet: #111111;
     --szoveg-szurke: #555555;
     --hatter-vilagos: #ffffff;
-    --hatter-szurke: #f8f9fa;
+    --hatter-szurke:  #f8f9fa;
     --betutipus: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-body {
+body{
     font-family: var(--betutipus);
     margin: 0;
     padding: 0;
@@ -17,18 +17,19 @@ body {
     overflow-x: hidden;
 }
 
-a {
+a{
     text-decoration: none;
     color: inherit;
+    transition: 0.3s;
 }
 
-ul {
+ul{
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-header {
+header{
     background-color: rgba(71, 75, 141, 0.492);
     position: fixed;
     top: 0;
@@ -38,7 +39,7 @@ header {
     backdrop-filter: blur(10px);
 }
 
-.fejlec-tartalom {
+.fejlec-tartalom{
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
@@ -47,7 +48,7 @@ header {
     padding: 12px 40px;
 }
 
-.logo-terulet {
+.logo-terulet{
     display: flex;
     align-items: center;
     gap: 12px;
@@ -56,83 +57,99 @@ header {
     color: var(--pg-kek);
 }
 
-.logo-terulet img {
+.logo-terulet img{
     height: 42px;
     width: auto;
 }
 
-.menu {
+.menu{
     display: flex;
     gap: 30px;
     font-size: 16px;
     font-weight: 600;
+    color: var(--szoveg-sotet);
 }
 
-.jelentkezes-gomb {
+.menu a:hover, .lablec-oszlop a:hover, .kartya-link:hover{
+    color: var(--pg-arany);
+    text-shadow: 0px 0px 5px var(--pg-arany);
+}
+
+.jelentkezes-gomb{
     background-color: var(--pg-kek);
     color: white;
+    /*  PREV VERSION: color: white !important;*/
     padding: 10px 22px;
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
 }
 
-.nyito-resz {
+.nyito-resz{
     height: 100vh;
     background:
-        linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0) 90%,
-            rgba(255, 255, 255, 1) 100%
-        ),
-        linear-gradient(
-            to right,
-            rgba(0, 3, 182, 0.1) 0%,
-            rgb(22, 23, 109) 110%
-        ),
-        url('pg.jpg') left top / cover no-repeat;
-
+    linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 90%,
+        rgba(255, 255, 255, 1) 100%
+    ),
+    linear-gradient(
+        to right,
+        rgba(0, 3, 182, 0.1) 0%,
+        rgb(22, 23, 109) 110%
+    ),
+    url('pg.jpg') left top / cover no-repeat;
+    background-attachment: scroll;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 80px 40px 0;
 }
 
-.nyito-tartalom {
+.nyito-tartalom{
     max-width: 650px;
+    text-align: left;
     padding-right: 60px;
     color: var(--pg-arany);
 }
 
-.nyito-resz h1 {
+.nyito-resz h1{
     font-size: 52px;
     font-weight: 800;
     margin-bottom: 20px;
     line-height: 1.1;
+    letter-spacing: -1px;
 }
 
-.nyito-resz p {
+.nyito-resz p{
     font-size: 18px;
     margin-bottom: 35px;
     line-height: 1.6;
 }
 
-.fo-gomb {
+.fo-gomb{
     display: inline-block;
     background-color: var(--pg-kek);
     color: white;
     padding: 15px 35px;
     border-radius: 30px;
     font-weight: 700;
+    font-size: 15px;
 }
 
-.tartalmi-resz {
+.jelentkezes-gomb:hover, .fo-gomb:hover{
+    background-color: var(--pg-arany);
+    transform: scale(1.1);
+    color: var(--szoveg-sotet);
+}
+
+.tartalmi-resz{
     padding: 80px 40px;
     max-width: 1440px;
     margin: 0 auto;
 }
 
-.szekcio-cim {
+.szekcio-cim{
     font-size: 36px;
     font-weight: 700;
     text-align: center;
@@ -146,7 +163,7 @@ header {
     gap: 30px;
 }
 
-.informacio-kartya {
+.informacio-kartya{
     background: white;
     border-radius: 20px;
     overflow: hidden;
@@ -155,61 +172,63 @@ header {
     flex-direction: column;
 }
 
-.informacio-kartya:hover {
+.informacio-kartya:hover{
     box-shadow: 0 20px 40px var(--pg-kek);
     transform: translateY(-5px);
 }
 
-.kartya-kep {
+.kartya-kep{
     height: 220px;
     background-size: cover;
     background-position: center;
 }
 
-.kartya-tartalom {
+.kartya-tartalom{
     padding: 30px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.kartya-kategoria {
-    font-size: 12px;
+.kartya-kategoria{
+    font-size: 12p;
     font-weight: 700;
     color: var(--pg-arany);
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-.informacio-kartya h3 {
+.informacio-kartya h3{
     font-size: 22px;
-    color: var(--pg-kek);
+    font-weight: 700;
     margin: 0 0 15px;
+    color: var(--pg-kek);
 }
 
-.informacio-kartya p {
+.informacio-kartya p{
     font-size: 15px;
     color: var(--szoveg-szurke);
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.kartya-link {
+.kartya-link{
     font-size: 14px;
     font-weight: 700;
     color: var(--pg-kek);
     margin-top: auto;
 }
 
-.kartya-link::after {
+.kartya-link::after{
     content: ' →';
 }
 
-.tortenet-resz {
+.tortenet-resz{
     background-color: var(--hatter-szurke);
     padding: 90px 40px;
 }
 
-.tortenet-tartalom {
+.tortenet-tartalom{
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
@@ -217,110 +236,164 @@ header {
     gap: 60px;
 }
 
-.tortenet-kep {
+.tortenet-kep{
     flex: 1;
     border-radius: 20px;
+    overflow: hidden;
     height: 420px;
     background-image: url('tortenet.jpg');
     background-size: cover;
     background-position: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.tortenet-szoveg {
+.tortenet-szoveg{
     flex: 1;
 }
 
-.tortenet-szoveg h2 {
+.tortenet-szoveg h2{
     font-size: 38px;
+    font-weight: 700;
     color: var(--pg-kek);
-}
-
-.tortenet-szoveg p {
-    font-size: 16px;
-    color: var(--szoveg-szurke);
-    line-height: 1.8;
-}
-
-footer {
-    background-color: var(--pg-kek);
-    color: rgba(255, 255, 255, 0.8);
-    padding: 70px 40px 30px;
-}
-
-.lablec-tartalom {
-    max-width: 1440px;
-    margin: 0 auto 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-}
-
-.lablec-oszlop h4 {
-    color: white;
     margin-bottom: 20px;
 }
 
-.lablec-oszlop ul li {
+.tortenet-szoveg p{
+    font-size: 16px;
+    color: var(--szoveg-szurke);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+footer{
+    background-color: var(--pg-kek);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 70px 40px 30px;
+    font-size: 14px;
+}
+
+.lablec-tartalom{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.lablec-oszlop h4{
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.lablec-oszlop ul li{
     margin-bottom: 12px;
 }
 
-.lablec-also-resz {
+.kapcsolat-adat{
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.lablec-also-resz{
     max-width: 1440px;
     margin: 0 auto;
     text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
+    opacity: 0.6;
 }
 
-a {
-    transition: 0.3s;
-}
-
-.menu a:hover,
-.lablec-oszlop a:hover,
-.kartya-link:hover {
-    color: var(--pg-arany);
-    text-shadow: 0 0 5px var(--pg-arany);
-}
-
-.jelentkezes-gomb:hover,
-.fo-gomb:hover {
-    background-color: var(--pg-arany);
-    transform: scale(1.1);
-    color: var(--szoveg-sotet);
-}
-
-@media (max-width: 1024px) {
-    .nyito-resz {
+@media (max-width: 1024px){
+    .nyito-resz{
         background-size: cover;
         justify-content: center;
         text-align: center;
-    }
-
-    .nyito-tartalom {
+        }
+    .nyito-tartalom{
         padding-right: 0;
-    }
-
-    .tortenet-tartalom {
+        }
+    .tortenet-tartalom{
         flex-direction: column;
-    }
-
-    .tortenet-kep {
+        }
+        .tortenet-kep{
         width: 100%;
         height: 300px;
+        }
+}
+
+@media (max-width: 768px){
+    .menu{
+        display: none;
+        }
+    .tartalmi-resz{
+        padding: 50px 20px;
+        }
+    .nyito-resz h1{
+        font-size: 36px;
+        }
+}
+
+
+.munkatarsaink{  
+    .szekcio-cim{
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    .szekcio-cim:not(:first-child){
+        margin-top: 50px;
+    }
+    
+    .kartya-lista{
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .kartya-kep{
+        height: 400px;
+        background-position: top;
+    }
+    
+    .informacio-kartya h3{
+        margin: 0;
+    }
+    
+    .informacio-kartya p{
+        line-height: normal;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+
+    /*   DESIGN WHICH NEEDS REWORK   */
+    .informacio-kartya{
+        box-shadow: 0px 5px 10px var(--pg-kek);
+    }
+
+    .informacio-kartya:hover{
+        box-shadow: 0 20px 40px var(--pg-kek);
+        transform: translateY(-5px);
     }
 }
 
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-    }
+.valtozo-kartya-lista{
+    height: 80vh;
+}
 
-    .tartalmi-resz {
-        padding: 50px 20px;
-    }
+.valtozo-kartya{
+    height: 10vh;
+}
 
-    .nyito-resz h1 {
-        font-size: 36px;
-    }
+#first-card{
+    float: left;
+}
+
+#active-card{
+    float: none;
+}
+
+#last-card{
+    float: right;
 }
