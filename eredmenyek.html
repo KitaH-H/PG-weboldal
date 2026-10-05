@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szent Benedek PG - Kiskunfélegyháza</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <nav class="fejlec-tartalom">
+            <div class="logo-terulet">
+                <img src="pg_logo.png" alt="PG Bencés Címer">
+                Szent Benedek PG
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="#beiskolazas">
+                        Beiskolázás
+                    </a>
+                </li>
+                <li>
+                    <a href="munkatarsak.html">
+                        Munkatársaink
+                    </a>
+                </li>
+                <li>
+                    <a href="#erasmus">
+                        Erasmus+
+                    </a>
+                </li>
+                <li>
+                    <a href="eredmenyek.html">
+                        Eredményeink
+                    </a>
+                </li>
+                <li>
+                    <a href="#tortenet">
+                        Történetünk
+                    </a>
+                </li>
+                <li>
+                    <a href="#kapcsolat">
+                        Kapcsolat
+                    </a>
+                </li>
+            </ul>
+            <a href="https://szbi-pg.hu/index.php/hu/beiskolazas" class="jelentkezes-gomb">
+                Jelentkezés
+            </a>
+        </nav>
+    </header>
+        <section class="nyito-resz">
+        <div class="nyito-tartalom">
+            <h1>
+                ISKOLÁNK BÜSZKESÉGEI!
+            </h1>
+            <p>
+                Iskolánk diákjai évről évre számos tanulmányi,  
+            </p>
+            <p>
+                sport- és szakmai versenyen bizonyítják tehetségüket és kitartásukat.
+            </p>
+            <p>
+                Büszkék vagyunk az elért helyezésekre és győzelmekre, 
+            </p>
+            <p>
+                amelyek a diákok szorgalmának, 
+            </p>
+            <p>
+                felkészültségének és tanáraik támogatásának köszönhetők.
+            </p>
+            <h2>
+                Tehetség • Kitartás • Siker
+            </h2>
+        </div>
+    </section>
+    <section class="tartalmi-resz">
+    <div class="kep-galeria" id="galeria"></div>
+</section>
+
+<script>
+    const galeria = document.getElementById("galeria");
+
+    for (let i = 1; i <= 80; i++) {
+        galeria.innerHTML += `
+            <div class="kep">
+                <img 
+                    src="sikerek/image_${i}.jpg" 
+                    alt="Iskolai eredmények ${i}. kép"
+                    loading="lazy"
+                >
+            </div>
+        `;
+    }
+</script>
+
+    <footer id="kapcsolat">
+        <div class="lablec-tartalom">
+            <div class="lablec-oszlop">
+                <h4>
+                    Kiskunfélegyházi Szent Benedek PG Két Tanítási Nyelvű Technikum és Kollégium
+                </h4>
+                <ul class="kapcsolat-adat">
+                    <li>OM: 203365</li>
+                    <li>6100 Kiskunfélegyháza, Kossuth u. 24.</li>
+                    <li>titkarsag@szbi-pg.hu</li>
+                    <li>+36 76 462 332</li>
+                </ul>
+            </div>
+            <div class="lablec-oszlop">
+                <h4>
+                    Hasznos linkek
+                </h4>
+                <ul>
+                    <li>
+                        <a href="#beiskolazas">
+                            Beiskolázás
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tortenet">
+                            Történetünk
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="lablec-also-resz">
+            © Szent Benedek PG
+        </div>
+    </footer>
+</body>
+</html>
