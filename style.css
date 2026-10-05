@@ -240,3 +240,34 @@ header {
     color: var(--szoveg-szurke);
     line-height: 1.8;
 }
+
+footer {
+    background-color: var(--pg-kek);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 70px 40px 30px;
+}
+
+.lablec-tartalom {
+    max-width: 1440px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.lablec-oszlop h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.lablec-oszlop ul li {
+    margin-bottom: 12px;
+}
+
+.lablec-also-resz {
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+}
