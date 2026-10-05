@@ -271,3 +271,21 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 30px;
 }
+
+a {
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.lablec-oszlop a:hover,
+.kartya-link:hover {
+    color: var(--pg-arany);
+    text-shadow: 0 0 5px var(--pg-arany);
+}
+
+.jelentkezes-gomb:hover,
+.fo-gomb:hover {
+    background-color: var(--pg-arany);
+    transform: scale(1.1);
+    color: var(--szoveg-sotet);
+}
