@@ -289,3 +289,38 @@ a {
     transform: scale(1.1);
     color: var(--szoveg-sotet);
 }
+
+@media (max-width: 1024px) {
+    .nyito-resz {
+        background-size: cover;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nyito-tartalom {
+        padding-right: 0;
+    }
+
+    .tortenet-tartalom {
+        flex-direction: column;
+    }
+
+    .tortenet-kep {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .tartalmi-resz {
+        padding: 50px 20px;
+    }
+
+    .nyito-resz h1 {
+        font-size: 36px;
+    }
+}
