@@ -9,46 +9,22 @@
 <body>
     <header>
         <nav class="fejlec-tartalom">
-                <div class="logo-terulet">
-                    <img src="pg_logo.png" alt="PG Bencés Címer">
-                    Szent Benedek PG
-                </div>
-                <ul class="menu">
-                    <li>
-                        <a href="#beiskolazas">
-                            Beiskolázás
-                        </a>
-                    </li>
-                    <li>
-                        <a href="munkatarsak.html">
-                            Munkatársaink
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Erasmus_2022.html">
-                            Erasmus+
-                        </a>
-                    </li>
-                    <li>
-                        <a href="eredmenyek.html">
-                            Eredményeink
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.html#tortenet">
-                            Történetünk
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#kapcsolat">
-                            Kapcsolat
-                        </a>
-                    </li>
-                </ul>
-                <a href="https://szbi-pg.hu/index.php/hu/beiskolazas" class="jelentkezes-gomb">
-                    Jelentkezés
-                </a>
-            </nav>
+    <a href="index.html" class="logo-terulet">
+        <img src="pg_logo.png" alt="PG Bencés Címer">
+        Szent Benedek PG
+    </a>
+    <ul class="menu">
+        <li><a href="beiskolazas.html">Beiskolázás</a></li>
+        <li><a href="munkatarsak.html">Munkatársaink</a></li>
+        <li><a href="Erasmus_2022.html">Erasmus+</a></li>
+        <li><a href="eredmenyek.html">Eredményeink</a></li>
+        <li><a href="index.html#tortenet">Történetünk</a></li>
+        <li><a href="#kapcsolat">Kapcsolat</a></li>
+    </ul>
+    <a href="https://szbi-pg.hu/index.php/hu/beiskolazas" class="jelentkezes-gomb">
+        Jelentkezés
+    </a>
+</nav>
     </header>
 
     <main class="container">
@@ -162,7 +138,7 @@
         
                 const gallery = document.getElementsByClassName("gallery-grid")[0];
         
-                for (let i = 1; i <= 80; i++) {
+                for (let i = 1; i <= 26; i++) {
                     gallery.innerHTML += `
                         <div class="gallery-item">
                             <img 
