@@ -1,0 +1,240 @@
+:root{
+    --kek: #002c5f;
+    --kek-sotet: #001a3a;
+    --arany: #f0b74e;
+    --szoveg: #14213d;
+    --hatter-szurke: #eef2f7;
+    --betutipus: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Alapok ---------- */
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+    font-family: var(--betutipus);
+    margin: 0;
+    color: var(--szoveg);
+    overflow-x: hidden;
+}
+
+a{ text-decoration: none; color: inherit; transition: 0.3s; }
+ul{ list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Lebegő fejléc (lekerekített sáv) ---------- */
+
+header{
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 1200px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-radius: 999px;
+    box-shadow: 0 8px 30px rgba(0, 26, 58, 0.482);
+}
+
+.fejlec-tartalom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px 8px 20px;
+}
+
+.logo-terulet{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--kek);
+}
+
+.logo-terulet img{ height: 36px; }
+
+.menu{
+    display: flex;
+    gap: 4px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu a{
+    display: block;
+    padding: 8px 14px;
+    border-radius: 999px;
+}
+
+.menu a:hover{
+    background: var(--arany);
+    color: var(--kek);
+}
+
+.jelentkezes-gomb{
+    background: var(--kek);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.jelentkezes-gomb:hover{
+    background: var(--arany);
+    color: var(--kek-sotet);
+}
+
+.lablec-oszlop a:hover{ color: var(--arany); }
+
+/* ---------- Nyitó rész ---------- */
+
+.nyito-resz{
+    min-height: 60vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 110px 40px 50px;
+    border-radius: 0 0 40px 40px;
+    background:
+        linear-gradient(to top, rgba(0, 26, 58, 0.95), rgba(0, 26, 58, 0.3)),
+        url('verseny.jpg') center top / cover;   /* a kép teteje látszik; finomhangolás: center 15% */
+    color: white;
+}
+
+.nyito-tartalom{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nyito-resz h1{
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin: 0 0 20px;
+    color: var(--arany);
+}
+
+/* A HTML-ben a mondat több <p>-re van szedve.
+   Az "inline" miatt ezek egyetlen folyó szövegként jelennek meg. */
+.nyito-resz p{
+    display: inline;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.nyito-tartalom{ max-width: 760px; }
+
+.nyito-resz h2{
+    font-size: 20px;
+    color: var(--arany);
+    margin: 24px 0 0;
+}
+
+/* ---------- Képgaléria ---------- */
+
+.tartalmi-resz{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 32px;
+}
+
+.kep-galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.kep{
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--hatter-szurke);
+}
+
+.kep img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: top;
+    cursor: zoom-in;
+    transition: 0.4s;
+}
+
+.kep:hover img{ transform: scale(1.06); }
+
+/* A nagyítást (lightbox) a lap legutolsó <div> eleme adja,
+   a JavaScript állítja be. Ezt a szabályt ne töröld! */
+body > div:last-child{
+    z-index: 2000;                    /* a fejléc fölé kerül */
+    left: 0;
+    cursor: zoom-out;
+}
+
+/* ---------- Lábléc ---------- */
+
+footer{
+    background: var(--kek-sotet);
+    color: rgba(255, 255, 255, 0.78);
+    padding: 70px 32px 28px;
+    margin-top: 40px;
+    border-radius: 40px 40px 0 0;
+    font-size: 14px;
+}
+
+.lablec-tartalom{
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.lablec-oszlop h4{
+    color: var(--arany);
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0 0 18px;
+}
+
+.lablec-oszlop li{ margin-bottom: 10px; }
+.kapcsolat-adat{ line-height: 1.6; }
+
+.lablec-also-resz{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0.7;
+}
+
+/* ---------- Mobil és tablet ---------- */
+
+@media (max-width: 768px){
+    header{ border-radius: 24px; }
+    .fejlec-tartalom{ flex-wrap: wrap; padding: 8px 12px 8px 16px; }
+    .menu{
+        order: 3;                /* a menü külön sorba kerül */
+        width: 100%;
+        overflow-x: auto;        /* oldalra húzható, ha nem fér ki */
+        white-space: nowrap;
+    }
+    .nyito-resz{ padding: 150px 20px 40px; border-radius: 0 0 28px 28px; }
+    .nyito-resz h1{ font-size: 40px; letter-spacing: -1.5px; }
+    .tartalmi-resz{ padding: 40px 16px; }
+    .kep-galeria{ grid-template-columns: 1fr 1fr; gap: 10px; }
+    .kep{ border-radius: 14px; }
+    footer{ padding: 50px 20px 24px; border-radius: 28px 28px 0 0; }
+}
+
+@media (max-width: 450px){
+    .kep-galeria{ grid-template-columns: 1fr; }
+}
