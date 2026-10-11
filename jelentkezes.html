@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelentkezés - Szent Benedek PG - Kiskunfélegyháza</title>
+    <link rel="stylesheet" href="jelentkezes.css">
+</head>
+<body>
+    <header>
+        <nav class="fejlec-tartalom">
+            <a href="index.html" class="logo-terulet">
+                <img src="pg_logo.png" alt="PG Bencés Címer">
+                Szent Benedek PG
+            </a>
+            <ul class="menu">
+                <li><a href="beiskolazas.html">Beiskolázás</a></li>
+                <li><a href="munkatarsak.html">Munkatársaink</a></li>
+                <li><a href="Erasmus_2022.html">Erasmus+</a></li>
+                <li><a href="eredmenyek.html">Eredményeink</a></li>
+                <li><a href="index.html#tortenet">Történetünk</a></li>
+                <li><a href="#kapcsolat">Kapcsolat</a></li>
+            </ul>
+            <a href="jelentkezes.html" class="jelentkezes-gomb">
+                Jelentkezés
+            </a>
+        </nav>
+    </header>
+
+    <section class="nyito-resz">
+        <div class="nyito-tartalom">
+            <h1>Jelentkezés</h1>
+            <p>
+                Csatlakozz hozzánk! Itt megtudhatod, hogyan jelentkezhetsz a Szent Benedek PG-be,
+                és a lenti űrlap kitöltésével egyből jelentkezhetsz is.
+            </p>
+            <a href="#hivatalos" class="fo-gomb">Jelentkezem</a>
+        </div>
+    </section>
+
+    <section class="tartalmi-resz">
+        <h2 class="szekcio-cim">Így jelentkezhetsz</h2>
+        <ol class="lepesek">
+            <li>
+                <h3>Válassz tanulmányi területet</h3>
+                <p>
+                    Nézd meg a lehetőségeket a <a href="beiskolazas.html" class="szoveg-link">beiskolázás oldalon</a>,
+                    és válaszd ki, melyik illik hozzád.
+                </p>
+            </li>
+            <li>
+                <h3>Add be a jelentkezésed</h3>
+                <p>Töltsd ki az alábbi hivatalos jelentkezési űrlapot, és küldd el az iskolának.</p>
+            </li>
+            <li>
+                <h3>Nézd meg a felvételi jegyzéket</h3>
+                <p>
+                    Tanulmányi területenként közzétesszük. A rangsorban hátrébb állók is bekerülhetnek,
+                    mert az élmezőnyből páran máshová mennek.
+                </p>
+            </li>
+        </ol>
+    </section>
+
+    <section class="tartalmi-resz" id="hivatalos">
+        <h2 class="szekcio-cim">Hivatalos jelentkezés</h2>
+
+        <form class="urlap" id="jelentkezesi-urlap">
+            <div class="mezo">
+                <label for="tanulo">Tanuló neve *</label>
+                <input type="text" id="tanulo" name="tanulo" required autocomplete="off">
+            </div>
+            <div class="mezo">
+                <label for="szulo">Szülő / gondviselő neve *</label>
+                <input type="text" id="szulo" name="szulo" required autocomplete="name">
+            </div>
+            <div class="mezo">
+                <label for="email">E-mail cím *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="mezo">
+                <label for="telefon">Telefonszám *</label>
+                <input type="tel" id="telefon" name="telefon" required autocomplete="tel">
+            </div>
+            <div class="mezo">
+                <label for="iskola">Jelenlegi iskola *</label>
+                <input type="text" id="iskola" name="iskola" required autocomplete="off">
+            </div>
+            <div class="mezo">
+                <label for="terulet">Tanulmányi terület *</label>
+                <select id="terulet" name="terulet" required>
+                    <option value="">Válassz tanulmányi területet</option>
+                    <option>0001 – Gépészet</option>
+                    <option>0002 – Magyar-német két tanítási nyelvű gépészet</option>
+                    <option>0003 – Magyar-angol két tanítási nyelvű gépészet</option>
+                    <option>0004 – Informatika és távközlés</option>
+                    <option>0005 – Magyar-angol két tanítási nyelvű informatika és távközlés</option>
+                </select>
+            </div>
+            <div class="mezo teljes">
+                <label for="uzenet">Megjegyzés</label>
+                <textarea id="uzenet" name="uzenet" rows="5"></textarea>
+            </div>
+            <div class="mezo teljes jelolo-sor">
+                <label class="jelolo">
+                    <input type="checkbox" id="kollegium" name="kollegium">
+                    <span>Érdekel a kollégiumi elhelyezés</span>
+                </label>
+                <label class="jelolo">
+                    <input type="checkbox" id="hozzajarul" name="hozzajarul" required>
+                    <span>Hozzájárulok, hogy a megadott adataimat az iskola a jelentkezés elbírálásához kezelje, és velem a kapcsolatot felvegye. *</span>
+                </label>
+            </div>
+            <div class="mezo teljes">
+                <button type="submit" class="kuldes-gomb">Jelentkezés elküldése</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="tartalmi-resz nyilt-napok">
+        <h2 class="szekcio-cim">Nyílt napjaink</h2>
+        <ul class="nyilt-lista">
+            <li>
+                <span class="nap">2026. november 3.</span>
+                <span class="reszlet">Regisztráció: 07:30 · Kezdés: 08:00</span>
+            </li>
+            <li>
+                <span class="nap">2026. november 24.</span>
+                <span class="reszlet">Regisztráció: 07:30 · Kezdés: 08:00</span>
+            </li>
+        </ul>
+    </section>
+
+    <footer id="kapcsolat">
+        <div class="lablec-tartalom">
+            <div class="lablec-oszlop">
+                <h4>
+                    Kiskunfélegyházi Szent Benedek PG Két Tanítási Nyelvű Technikum és Kollégium
+                </h4>
+                <ul class="kapcsolat-adat">
+                    <li>OM: 203365</li>
+                    <li>6100 Kiskunfélegyháza, Kossuth u. 24.</li>
+                    <li>titkarsag@szbi-pg.hu</li>
+                    <li>+36 76 462 332</li>
+                </ul>
+            </div>
+            <div class="lablec-oszlop">
+                <h4>Hasznos linkek</h4>
+                <ul>
+                    <li><a href="index.html">Főoldal</a></li>
+                    <li><a href="beiskolazas.html">Beiskolázás</a></li>
+                    <li><a href="index.html#tortenet">Történetünk</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lablec-also-resz">
+            © Szent Benedek PG
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('jelentkezesi-urlap').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const f = e.target;
+            const sorok = [
+                'Tanuló neve: ' + f.tanulo.value,
+                'Szülő / gondviselő: ' + f.szulo.value,
+                'E-mail: ' + f.email.value,
+                'Telefon: ' + f.telefon.value,
+                'Jelenlegi iskola: ' + f.iskola.value,
+                'Tanulmányi terület: ' + f.terulet.value,
+                'Kollégium: ' + (f.kollegium.checked ? 'igen' : 'nem'),
+                '',
+                f.uzenet.value
+            ];
+            const targy = 'Jelentkezés – ' + f.tanulo.value;
+            window.location.href = 'mailto:titkarsag@szbi-pg.hu'
+                + '?subject=' + encodeURIComponent(targy)
+                + '&body=' + encodeURIComponent(sorok.join('\n'));
+        });
+    </script>
+</body>
+</html>
