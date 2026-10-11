@@ -1,0 +1,443 @@
+:root{
+    --kek: #002c5f;
+    --kek-sotet: #001a3a;
+    --arany: #c5a059;
+    --szoveg: #14213d;
+    --szurke: #4a5568;
+    --hatter-szurke: #eef2f7;
+    --vonal: #dde3ec;
+    --betutipus: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Alapok ---------- */
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+    font-family: var(--betutipus);
+    margin: 0;
+    color: var(--szoveg);
+    overflow-x: hidden;
+}
+
+a{ text-decoration: none; color: inherit; transition: 0.3s; }
+ul{ list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Lebegő fejléc (lekerekített sáv) ---------- */
+
+header{
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 1200px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-radius: 999px;
+    box-shadow: 0 8px 30px rgba(0, 26, 58, 0.482);
+}
+
+.fejlec-tartalom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px 8px 20px;
+}
+
+.logo-terulet{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--kek);
+}
+
+.logo-terulet img{ height: 36px; }
+
+.menu{
+    display: flex;
+    gap: 4px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu a{
+    display: block;
+    padding: 8px 14px;
+    border-radius: 999px;
+}
+
+.menu a:hover{
+    background: var(--arany);
+    color: var(--kek);
+}
+
+.jelentkezes-gomb{
+    background: var(--kek);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.jelentkezes-gomb:hover{
+    background: var(--arany);
+    color: var(--kek-sotet);
+}
+
+.lablec-oszlop a:hover{ color: var(--arany); }
+
+/* ---------- Nyitó rész ---------- */
+
+.nyito-resz{
+    min-height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 110px 40px 50px;
+    border-radius: 0 0 40px 40px;
+    background:
+        linear-gradient(to top, rgba(0, 26, 58, 0.95), rgba(0, 26, 58, 0.3)),
+        url('pg.jpg') center / cover;
+    color: white;
+}
+
+.nyito-resz h1{
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin: 0 0 20px;
+    max-width: 800px;
+}
+
+.nyito-resz p{
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 26px;
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.nyito-tartalom{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fo-gomb{
+    display: inline-block;
+    background: var(--arany);
+    color: var(--kek-sotet);
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.fo-gomb:hover{ background: white; }
+
+/* ---------- Szekciók ---------- */
+
+.tartalmi-resz{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 32px;
+}
+
+.szekcio-cim{
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin: 0 0 40px;
+    color: var(--kek);
+}
+
+/* ---------- Tanulmányi területek (fotós kártyák) ---------- */
+
+.szakma-lista{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.szakma-kartya{
+    position: relative;
+    min-height: 420px;
+    padding: 28px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 10px;
+    color: white;
+    background-color: var(--kek);      /* ha nincs kép, ez látszik */
+    background-size: cover;            /* a kép az inline style-ból jön */
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+}
+
+.szakma-kartya:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 26, 58, 0.35);
+}
+
+/* sötét átmenet, hogy a szöveg olvasható legyen */
+.szakma-kartya::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 26, 58, 0.95) 25%, rgba(0, 26, 58, 0.1));
+}
+
+.szakma-kartya > *{
+    position: relative;
+    z-index: 1;
+}
+
+.kod{
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.szakma-kartya h3{
+    font-size: 28px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.szakma-kartya p{
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Két tanítási nyelvű rész ---------- */
+
+.nyelvi-resz{
+    background: var(--kek);
+    color: white;
+    padding: 100px 32px;
+    margin: 0 12px;
+    border-radius: 40px;
+}
+
+.nyelvi-tartalom{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nyelvi-tartalom h2{
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin: 0 0 20px;
+    max-width: 700px;
+}
+
+.nyelvi-tartalom p{
+    font-size: 17px;
+    line-height: 1.75;
+    margin: 0 0 28px;
+    max-width: 640px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Jelentkezési lépések ---------- */
+
+.lepesek{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    counter-reset: lepes;
+}
+
+.lepesek li{
+    position: relative;
+    padding: 90px 28px 32px;
+    border-radius: 28px;
+    background: var(--hatter-szurke);
+    border: 1px solid var(--vonal);
+    counter-increment: lepes;
+}
+
+.lepesek li::before{
+    content: counter(lepes);
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--arany);
+    color: var(--kek-sotet);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.lepesek h3{
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: var(--kek);
+    margin: 0 0 10px;
+}
+
+.lepesek p{
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--szurke);
+    margin: 0;
+}
+
+/* ---------- Kérdésed van? ---------- */
+
+.kerdes-resz{
+    background: var(--hatter-szurke);
+    padding: 100px 32px;
+    margin: 0 12px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.kerdes-tartalom{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.kerdes-tartalom h2{
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    color: var(--kek);
+    margin: 0 0 20px;
+}
+
+.kerdes-tartalom p{
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--szurke);
+    margin: 0 0 28px;
+}
+
+.kerdes-tartalom p a{
+    color: var(--kek);
+    font-weight: 600;
+}
+
+.kerdes-tartalom p a:hover{ color: var(--arany); }
+
+/* ---------- Lábléc ---------- */
+
+footer{
+    background: var(--kek-sotet);
+    color: rgba(255, 255, 255, 0.78);
+    padding: 70px 32px 28px;
+    margin-top: 100px;
+    border-radius: 40px 40px 0 0;
+    font-size: 14px;
+}
+
+.lablec-tartalom{
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.lablec-oszlop h4{
+    color: white;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0 0 18px;
+}
+
+.lablec-oszlop li{ margin-bottom: 10px; }
+.kapcsolat-adat{ line-height: 1.6; }
+
+.lablec-also-resz{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0.7;
+}
+
+#kapcsolat{ scroll-margin-top: 80px; }
+
+/* ---------- Mobil és tablet ---------- */
+
+@media (max-width: 768px){
+    header{ border-radius: 24px; }
+    .fejlec-tartalom{ flex-wrap: wrap; padding: 8px 12px 8px 16px; }
+    .menu{
+        order: 3;                /* a menü külön sorba kerül */
+        width: 100%;
+        overflow-x: auto;        /* oldalra húzható, ha nem fér ki */
+        white-space: nowrap;
+    }
+    .nyito-resz{ padding: 150px 20px 40px; border-radius: 0 0 28px 28px; }
+    .nyito-resz h1{ font-size: 44px; }
+    .tartalmi-resz{ padding: 60px 20px; }
+    .szekcio-cim{ font-size: 34px; }
+    .szakma-kartya{ min-height: 360px; }
+    .nyelvi-resz,
+    .kerdes-resz{ padding: 60px 20px; margin: 0 8px; border-radius: 28px; }
+    .nyelvi-tartalom h2,
+    .kerdes-tartalom h2{ font-size: 32px; }
+    footer{ padding: 50px 20px 24px; margin-top: 60px; border-radius: 28px 28px 0 0; }
+}
+
+/* ---------- Beiskolázási szórólap ---------- */
+
+.szorolap-resz{
+    padding-top: 0;
+}
+
+.szorolap-lista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.szorolap-lista a{
+    display: block;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid var(--vonal);
+    box-shadow: 0 8px 30px rgba(0, 26, 58, 0.15);
+}
+
+.szorolap-lista a:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 26, 58, 0.3);
+}
+
+.szorolap-lista img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px){
+    .szorolap-lista a{ border-radius: 20px; }
+}
