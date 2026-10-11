@@ -1,0 +1,411 @@
+:root{
+    --kek: #002c5f;
+    --kek-sotet: #001a3a;
+    --arany: #c5a059;
+    --szoveg: #14213d;
+    --szurke: #4a5568;
+    --hatter-szurke: #eef2f7;
+    --vonal: #dde3ec;
+    --betutipus: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Alapok ---------- */
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+    font-family: var(--betutipus);
+    margin: 0;
+    color: var(--szoveg);
+    overflow-x: hidden;
+}
+
+a{ text-decoration: none; color: inherit; transition: 0.3s; }
+ul{ list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Lebegő fejléc (lekerekített sáv) ---------- */
+
+header{
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 1200px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-radius: 999px;
+    box-shadow: 0 8px 30px rgba(0, 26, 58, 0.482);
+}
+
+.fejlec-tartalom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px 8px 20px;
+}
+
+.logo-terulet{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--kek);
+}
+
+.logo-terulet img{ height: 36px; }
+
+.menu{
+    display: flex;
+    gap: 4px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu a{
+    display: block;
+    padding: 8px 14px;
+    border-radius: 999px;
+}
+
+.menu a:hover{
+    background: var(--arany);
+    color: var(--kek);
+}
+
+.jelentkezes-gomb{
+    background: var(--kek);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.jelentkezes-gomb:hover{
+    background: var(--arany);
+    color: var(--kek-sotet);
+}
+
+.lablec-oszlop a:hover{ color: var(--arany); }
+
+/* ---------- Nyitó rész ---------- */
+
+.nyito-resz{
+    min-height: 90vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 110px 40px 50px;
+    border-radius: 0 0 40px 40px;
+    background:
+        linear-gradient(to top, rgba(0, 26, 58, 0.95), rgba(0, 26, 58, 0.3)),
+        url('pg.jpg') center / cover;
+    color: white;
+}
+
+.nyito-resz h1{
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin: 0 0 20px;
+    max-width: 800px;
+}
+
+.nyito-resz p{
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 26px;
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.nyito-tartalom{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fo-gomb{
+    display: inline-block;
+    background: var(--arany);
+    color: var(--kek-sotet);
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.fo-gomb:hover{ background: white; }
+
+/* ---------- Kártyák ---------- */
+
+.tartalmi-resz{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 32px;
+}
+
+.szekcio-cim{
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin: 0 0 40px;
+    color: var(--kek);
+}
+
+.kartya-lista{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* A fotó kitölti a kártyát, a szöveg alul, a fotóra kerül */
+.informacio-kartya{
+    position: relative;
+    min-height: 500px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--kek);
+    color: white;
+}
+
+.kartya-kep{
+    position: absolute;
+    inset: 0;                         /* kitölti a kártyát */
+    background-size: cover;
+    background-position: center;
+    transition: 0.6s;
+}
+
+.informacio-kartya:hover .kartya-kep{ transform: scale(1.06); }
+
+/* sötét átmenet, hogy a szöveg olvasható legyen */
+.kartya-tartalom{
+    position: relative;
+    padding: 120px 28px 28px;
+    background: linear-gradient(to top, rgba(0, 26, 58, 0.95) 40%, transparent);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.kartya-kategoria{
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.informacio-kartya h3{
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.informacio-kartya p{
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.kartya-link{
+    background: var(--arany);
+    color: var(--kek-sotet);
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.kartya-link:hover{ background: white; }
+
+/* ---------- Történet ---------- */
+
+.tortenet-resz{
+    background: var(--hatter-szurke);
+    padding: 100px 32px;
+    margin: 0 12px;
+    border-radius: 40px;
+}
+
+.tortenet-tartalom{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.tortenet-kep{
+    flex: 1;
+    height: 460px;
+    border-radius: 28px;
+    background: url('tortenet.jpg') center / cover;
+}
+
+.tortenet-szoveg{ flex: 1; }
+
+.tortenet-szoveg h2{
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    color: var(--kek);
+    margin: 0 0 20px;
+}
+
+.tortenet-szoveg p{
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--szurke);
+    margin: 0;
+}
+
+/* ---------- Lábléc ---------- */
+
+footer{
+    background: var(--kek-sotet);
+    color: rgba(255, 255, 255, 0.78);
+    padding: 70px 32px 28px;
+    margin-top: 100px;
+    border-radius: 40px 40px 0 0;
+    font-size: 14px;
+}
+
+.lablec-tartalom{
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.lablec-oszlop h4{
+    color: white;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0 0 18px;
+}
+
+.lablec-oszlop li{ margin-bottom: 10px; }
+.kapcsolat-adat{ line-height: 1.6; }
+
+.lablec-also-resz{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0.7;
+}
+
+/* ---------- Mobil és tablet ---------- */
+
+@media (max-width: 1024px){
+    .tortenet-tartalom{ flex-direction: column; gap: 30px; }
+    .tortenet-kep{ flex: none; width: 100%; height: 300px; }
+}
+
+@media (max-width: 768px){
+    header{ border-radius: 24px; }
+    .fejlec-tartalom{ flex-wrap: wrap; padding: 8px 12px 8px 16px; }
+    .menu{
+        order: 3;                /* a menü külön sorba kerül */
+        width: 100%;
+        overflow-x: auto;        /* oldalra húzható, ha nem fér ki */
+        white-space: nowrap;
+    }
+    .nyito-resz{ padding: 150px 20px 40px; border-radius: 0 0 28px 28px; }
+    .nyito-resz h1{ font-size: 44px; }
+    .tartalmi-resz{ padding: 60px 20px; }
+    .szekcio-cim{ font-size: 34px; }
+    .informacio-kartya{ min-height: 420px; }
+    .tortenet-resz{ padding: 60px 20px; margin: 0 8px; border-radius: 28px; }
+    .tortenet-szoveg h2{ font-size: 32px; }
+    footer{ padding: 50px 20px 24px; margin-top: 60px; border-radius: 28px 28px 0 0; }
+}
+
+/* ---------- Munkatársak oldal (a fotó fent, a szöveg alatta) ---------- */
+
+.munkatarsaink .kartya-lista{ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.munkatarsaink .informacio-kartya{
+    min-height: 0;
+    background: white;
+    color: var(--szoveg);
+    border: 1px solid var(--vonal);
+    border-radius: 24px;
+}
+
+.munkatarsaink .kartya-kep{
+    position: relative;
+    height: 400px;
+    background-position: top;
+}
+
+.munkatarsaink .kartya-tartalom{
+    padding: 20px 22px 24px;
+    background: none;
+    gap: 4px;
+}
+
+.munkatarsaink .informacio-kartya h3{ font-size: 20px; color: var(--kek); }
+.munkatarsaink .informacio-kartya p{ color: var(--szurke); font-weight: 500; }
+.munkatarsaink .szekcio-cim:not(:first-child){ margin-top: 60px; }
+
+/* ---------- Eredmények oldal ---------- */
+
+.nyito-resz--oldal{ min-height: 60vh; }
+.nyito-resz--oldal h1{ font-size: 72px; }
+.nyito-cimke{ color: var(--arany); font-size: 20px; font-weight: 600; }
+
+.kep-galeria{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.kep{
+    padding: 0;
+    border: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.kep img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: top;
+    transition: 0.4s;
+}
+
+.kep:hover img{ transform: scale(1.06); }
+
+@media (max-width: 768px){
+    .nyito-resz--oldal h1{ font-size: 40px; }
+}
+
+/* ---------- Váltakozó kártyák (változatlan) ---------- */
+
+.valtozo-kartya-lista{ height: 80vh; }
+.valtozo-kartya{ height: 10vh; }
+#first-card{ float: left; }
+#active-card{ float: none; }
+#last-card{ float: right; }
