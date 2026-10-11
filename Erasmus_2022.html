@@ -35,12 +35,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html/#tortenet">
+                        <a href="index.html#tortenet">
                             Történetünk
                         </a>
                     </li>
                     <li>
-                        <a href="index.html/#kapcsolat">
+                        <a href="#kapcsolat">
                             Kapcsolat
                         </a>
                     </li>
@@ -137,40 +137,75 @@
                     Galéria
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item"><img src="Erasmus_2022_files/01.jpg" alt="kép1"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/02.jpg" alt="kép2"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/03.jpg" alt="kép3"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/04.jpg" alt="kép4"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/05.jpg" alt="kép5"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/06.jpg" alt="kép6"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/07.jpg" alt="kép7"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/08.jpg" alt="kép8"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/09.jpg" alt="kép9"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/10.jpg" alt="kép10"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/11.jpg" alt="kép11"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/12.jpg" alt="kép12"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/13.jpg" alt="kép13"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/14.jpg" alt="kép14"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/15.jpg" alt="kép15"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/16.jpg" alt="kép16"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/17.jpg" alt="kép17"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/18.jpg" alt="kép18"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/19.jpg" alt="kép19"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/20.jpg" alt="kép20"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/21.jpg" alt="kép21"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/22.jpg" alt="kép22"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/23.jpg" alt="kép23"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/24.jpg" alt="kép24"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/25.jpg" alt="kép25"></div>
-                    <div class="gallery-item"><img src="Erasmus_2022_files/26.jpg" alt="kép26"></div>
+                    
                 </div>
             </div>
+            <script>
+                document.body.addEventListener('keydown', (event)=>{
+                    if (event.keyCode == '37') {
+                        let img = document.body.lastElementChild.style.backgroundImage;
+                        let n = "";
+                        for (let i = img.lastIndexOf("/")+1; img[i] != "."; i++) {
+                            n += img[i];
+                        }
+                        document.body.lastElementChild.style.backgroundImage = `url(Erasmus_2022_files/${("0" + (Number(n)-1)).slice(-2)}.jpg)`;
+                    };
+                    if (event.keyCode == '39') {
+                        let img = document.body.lastElementChild.style.backgroundImage;
+                        let n = "";
+                        for (let i = img.lastIndexOf("/")+1; img[i] != "."; i++) {
+                            n += img[i];
+                        }
+                        document.body.lastElementChild.style.backgroundImage = `url(Erasmus_2022_files/${("0" + (Number(n)+1)).slice(-2)}.jpg)`;
+                    };
+                });
+        
+                const gallery = document.getElementsByClassName("gallery-grid")[0];
+        
+                for (let i = 1; i <= 80; i++) {
+                    gallery.innerHTML += `
+                        <div class="gallery-item">
+                            <img 
+                                src="Erasmus_2022_files/${("0" + i).slice(-2)}.jpg" 
+                                alt="kép${i}"
+                                loading="lazy"
+                                onclick="
+                                    let e = document.body.lastElementChild.style;
+                                    e.backgroundImage = 'url(Erasmus_2022_files/${("0" + i).slice(-2)}.jpg)';
+                                    e.width = '100vw';
+                                    e.height = '100vh';
+                                    e.backgroundSize = 'auto 80%';
+                                    e.backgroundRepeat = 'no-repeat';
+                                    e.backgroundPosition = 'center';
+                                    e.top = '0';
+                                    e.position = 'fixed';
+                                    e.backdropFilter = 'brightness(20%)';
+                                    document.body.lastElementChild.addEventListener('click', ()=>{
+                                        let e = document.body.lastElementChild.style;
+                                        e.backgroundImage = 'none';
+                                        e.width = '0px';
+                                        e.height = '0px';
+                                        e.backgroundSize = '0 0';
+                                        e.backgroundRepeat = 'initial';
+                                        e.backgroundPosition = 'initial';
+                                        e.top = '0';
+                                        e.position = 'initial';
+                                        e.backdropFilter = 'none';
+                                    });
+                                    "
+                            >
+                        </div>
+                    `;
+                }
+            </script>
+
+
         </article>
     </main>
 
     <footer>
         © 2026 Szent Benedek PG
     </footer>
-
+    <div></div>
 </body>
 </html>
