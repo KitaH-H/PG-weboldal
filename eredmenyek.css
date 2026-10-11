@@ -177,6 +177,7 @@ body > div:last-child{
     z-index: 2000;                    /* a fejléc fölé kerül */
     left: 0;
     cursor: zoom-out;
+    text-align: justify;
 }
 
 /* ---------- Lábléc ---------- */

@@ -21,7 +21,7 @@
         <li><a href="index.html#tortenet">Történetünk</a></li>
         <li><a href="#kapcsolat">Kapcsolat</a></li>
     </ul>
-    <a href="jelentkezes.html" class="jelentkezes-gomb">
+    <a href="https://szbi-pg.hu/index.php/hu/beiskolazas" class="jelentkezes-gomb">
         Jelentkezés
     </a>
 </nav>
@@ -56,12 +56,25 @@
     </section>
 
     <script>
+        async function readJSONfile(file) {
+            let object = await fetch(file);
+            let myText = await object.text();
+
+            let img = String();
+
+            document.body.lastElementChild.lastElementChild.innerHTML = JSON.parse(myText)[Number(document.body.lastElementChild.style.backgroundImage.split("_")[1].split(".")[0])-1];
+        }
+        
+
         document.body.addEventListener('keydown', (event)=>{
             if (event.keyCode == '37') {
                 let img = document.body.lastElementChild.style.backgroundImage;
                 let n = "";
                 for (let i = img.lastIndexOf("_")+1; img[i] != "."; i++) {
                     n += img[i];
+                }
+                if (Number(n)-1 < 1) {
+                    n = "80";
                 }
                 document.body.lastElementChild.style.backgroundImage = `url(sikerek/image_${Number(n)-1}.jpg)`;
             };
@@ -70,6 +83,9 @@
                 let n = "";
                 for (let i = img.lastIndexOf("_")+1; img[i] != "."; i++) {
                     n += img[i];
+                }
+                if (Number(n)+1 > 80) {
+                    n = "1";
                 }
                 document.body.lastElementChild.style.backgroundImage = `url(sikerek/image_${Number(n)+1}.jpg)`;
             };
@@ -85,17 +101,37 @@
                         alt="Iskolai eredmények ${i}. kép"
                         loading="lazy"
                         onclick="
+                            document.body.lastElementChild.innerHTML = '<div></div>';
+
                             let e = document.body.lastElementChild.style;
                             e.backgroundImage = 'url(sikerek/image_${i}.jpg)';
+                            readJSONfile('eredmenyek.JSON');
                             e.width = '100vw';
                             e.height = '100vh';
                             e.backgroundSize = 'auto 80%';
                             e.backgroundRepeat = 'no-repeat';
-                            e.backgroundPosition = 'center';
+                            e.backgroundPosition = 'top center';
                             e.top = '0';
                             e.position = 'fixed';
                             e.backdropFilter = 'brightness(20%)';
+
+                            let el = document.body.lastElementChild.firstElementChild.style;
+                            el.backgroundColor = 'white';
+                            el.margin = 'auto';
+                            el.transform = 'translateY(80vh)';
+                            el.padding = '2px';
+                            el.overflowY = 'auto';
+
+                            var img = new Image();
+                            img.src = 'sikerek/image_${i}.jpg';
+                            img.onload = function(){
+                                el.width = img.width/img.height*0.8*window.innerHeight + 'px';
+                            }
+                            el.height = '20vh';
+                            
+
                             document.body.lastElementChild.addEventListener('click', ()=>{
+                                document.body.lastElementChild.innerHTML = '';
                                 let e = document.body.lastElementChild.style;
                                 e.backgroundImage = 'none';
                                 e.width = '0px';
