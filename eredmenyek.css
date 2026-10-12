@@ -177,6 +177,7 @@ header{
 }
 
 .kep:hover > div{
+    position: relative;
     position: absolute; 
     transform: scale(1.5);
     animation-name: enlarge;
