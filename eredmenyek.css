@@ -157,11 +157,7 @@ header{
     overflow: hidden;
     border-radius: 20px;
     background: var(--hatter-szurke);
-}
-
-.kep:hover(){
-    transform: scale(3.0);
-    box-shadow: 0px 0px 5px black;
+    position: relative;
 }
 
 .kep img{
@@ -174,7 +170,27 @@ header{
     transition: 0.4s;
 }
 
-.kep:hover img{ transform: scale(1.06); }
+
+.kep:hover{
+    overflow: visible;
+    z-index: 1000000;
+}
+
+.kep:hover > div{
+    position: absolute; 
+    transform: scale(1.5);
+    animation-name: enlarge;
+    animation-duration: 400ms;
+    animation-timing-function:cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    animation-iteration-count: 1;
+    background-image: linear-gradient(to bottom, black 80%, rgba(0, 0, 0, 0.349) 100%);;
+    border-radius: 5px;
+}
+
+.kep:hover>div>div{
+    font-size: 7px;
+    color: white;
+}
 
 /* A nagyítást (lightbox) a lap legutolsó <div> eleme adja,
    a JavaScript állítja be. Ezt a szabályt ne töröld! */
@@ -220,6 +236,15 @@ footer{
     padding-top: 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     opacity: 0.7;
+}
+
+@keyframes enlarge{
+    from {
+        transform: scale(1.0);
+    }
+    to {
+        transform: scale(2.0);
+    }
 }
 
 /* ---------- Mobil és tablet ---------- */

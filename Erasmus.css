@@ -189,10 +189,38 @@ p{
 /* ---------- Lábléc ---------- */
 
 footer{
-    text-align: center;
-    padding: 32px 16px;
-    color: var(--szurke);
+    background: var(--kek-sotet);
+    color: rgba(255, 255, 255, 0.78);
+    padding: 70px 32px 28px;
+    margin-top: 100px;
+    border-radius: 40px 40px 0 0;
     font-size: 14px;
+}
+
+.lablec-tartalom{
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.lablec-oszlop h4{
+    color: white;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0 0 18px;
+}
+
+.lablec-oszlop li{ margin-bottom: 10px; }
+.kapcsolat-adat{ line-height: 1.6; }
+
+.lablec-also-resz{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0.7;
 }
 
 /* ---------- Mobil ---------- */

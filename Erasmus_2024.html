@@ -7,18 +7,25 @@
     <title>Erasmus+ beszámolók 2024 | Szent Benedek PG</title>
 </head>
 <body>
-
-<nav class="navbar">
-    <div class="navbar-inner">
-        <div class="logo">Szent Benedek PG</div>
-        <ul class="nav-links">
-            <li><a href="#">Főoldal</a></li>
-            <li><a href="#">Elérhetőségek</a></li>
-            <li><a href="#">Dokumentumok</a></li>
-            <li><a href="#">Galéria</a></li>
+<header>
+    <nav class="fejlec-tartalom">
+        <a href="index.html" class="logo-terulet">
+            <img src="pg_logo.png" alt="PG Bencés Címer">
+            Szent Benedek PG
+        </a>
+        <ul class="menu">
+            <li><a href="beiskolazas.html">Beiskolázás</a></li>
+            <li><a href="munkatarsak.html">Munkatársaink</a></li>
+            <li><a href="Erasmus_2022.html">Erasmus+</a></li>
+            <li><a href="eredmenyek.html">Eredményeink</a></li>
+            <li><a href="index.html#tortenet">Történetünk</a></li>
+            <li><a href="#kapcsolat">Kapcsolat</a></li>
         </ul>
-    </div>
-</nav>
+        <a href="jelentkezes.html" class="jelentkezes-gomb">
+            Jelentkezés
+        </a>
+    </nav>
+</header>
 
 <main class="container">
     <h1 class="year-title">2024 – Erasmus+ beszámolók</h1>
@@ -98,22 +105,6 @@
             A két hét alatt a diákok bátrabban kommunikáltak idegen nyelven, önállóbbak lettek, és 
             felejthetetlen élményekkel tértek haza.
         </p>
-
-        <div class="gallery">
-            <div class="gallery-header">
-                Galéria
-                <span class="gallery-count">7 kép</span>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">Kép 1</div>
-                <div class="gallery-item">Kép 2</div>
-                <div class="gallery-item">Kép 3</div>
-                <div class="gallery-item">Kép 4</div>
-                <div class="gallery-item">Kép 5</div>
-                <div class="gallery-item">Kép 6</div>
-                <div class="gallery-item">Kép 7</div>
-            </div>
-        </div>
     </article>
 
     <!-- 2. cikk -->
@@ -170,18 +161,7 @@
             Palaios Panteleimonas ófalujában sétáltunk, majd szirtakit táncoltunk.
         </p>
 
-        <div class="gallery">
-            <div class="gallery-header">
-                Galéria
-                <span class="gallery-count">13 kép</span>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">Kép 1</div>
-                <div class="gallery-item">Kép 2</div>
-                <div class="gallery-item">Kép 3</div>
-                <div class="gallery-item">…</div>
-            </div>
-        </div>
+         
     </article>
 
     <!-- 3. cikk -->
@@ -231,24 +211,116 @@
         </p>
 
         <div class="gallery">
-            <div class="gallery-header">
-                Galéria
-                <span class="gallery-count">20 kép</span>
+                <div class="gallery-title">
+                    Galéria
+                </div>
+                <div class="gallery-grid">
+                    
+                </div>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">Kép 1</div>
-                <div class="gallery-item">Kép 2</div>
-                <div class="gallery-item">Kép 3</div>
-                <div class="gallery-item">…</div>
-            </div>
-        </div>
+            <script>
+                document.body.addEventListener('keydown', (event)=>{
+                    if (event.keyCode == '37') {
+                        let img = document.body.lastElementChild.style.backgroundImage;
+                        let n = "";
+                        for (let i = img.lastIndexOf("/")+1; img[i] != "."; i++) {
+                            n += img[i];
+                        }
+                        if (Number(n)-1 < 1) {
+                            n = "64";
+                        }
+                        document.body.lastElementChild.style.backgroundImage = `url(Erasmus_2024_files/${("0" + (Number(n)-1)).slice(-2)}.jpg)`;
+                    };
+                    if (event.keyCode == '39') {
+                        let img = document.body.lastElementChild.style.backgroundImage;
+                        let n = "";
+                        for (let i = img.lastIndexOf("/")+1; img[i] != "."; i++) {
+                            n += img[i];
+                        }
+                        if (Number(n)+1 > 64) {
+                            n = "1";
+                        }
+                        document.body.lastElementChild.style.backgroundImage = `url(Erasmus_2024_files/${("0" + (Number(n)+1)).slice(-2)}.jpg)`;
+                    };
+                });
+        
+                const gallery = document.getElementsByClassName("gallery-grid")[0];
+        
+                for (let i = 1; i <= 64; i++) {
+                    gallery.innerHTML += `
+                        <div class="gallery-item">
+                            <img 
+                                src="Erasmus_2024_files/${("0" + i).slice(-2)}.jpg" 
+                                alt="kép${i}"
+                                loading="lazy"
+                                onclick="
+                                    let e = document.body.lastElementChild.style;
+                                    e.backgroundImage = 'url(Erasmus_2024_files/${("0" + i).slice(-2)}.jpg)';
+                                    e.width = '100vw';
+                                    e.height = '100vh';
+                                    e.backgroundSize = 'auto 80%';
+                                    e.backgroundRepeat = 'no-repeat';
+                                    e.backgroundPosition = 'center';
+                                    e.top = '0';
+                                    e.position = 'fixed';
+                                    e.backdropFilter = 'brightness(20%)';
+                                    document.body.lastElementChild.addEventListener('click', ()=>{
+                                        let e = document.body.lastElementChild.style;
+                                        e.backgroundImage = 'none';
+                                        e.width = '0px';
+                                        e.height = '0px';
+                                        e.backgroundSize = '0 0';
+                                        e.backgroundRepeat = 'initial';
+                                        e.backgroundPosition = 'initial';
+                                        e.top = '0';
+                                        e.position = 'initial';
+                                        e.backdropFilter = 'none';
+                                    });
+                                    "
+                            >
+                        </div>
+                    `;
+                }
+            </script>
     </article>
 
 </main>
 
-<footer>
-    © 2026 Szent Benedek PG
-</footer>
-
+<footer id="kapcsolat">
+        <div class="lablec-tartalom">
+            <div class="lablec-oszlop">
+                <h4>
+                    Kiskunfélegyházi Szent Benedek PG Két Tanítási Nyelvű Technikum és Kollégium
+                </h4>
+                <ul class="kapcsolat-adat">
+                    <li>OM: 203365</li>
+                    <li>6100 Kiskunfélegyháza, Kossuth u. 24.</li>
+                    <li>titkarsag@szbi-pg.hu</li>
+                    <li>+36 76 462 332</li>
+                </ul>
+            </div>
+            <div class="lablec-oszlop">
+                <h4>
+                    Hasznos linkek
+                </h4>
+                <ul>
+                    <li>
+                        <a href="index.html#beiskolazas">
+                            Beiskolázás
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#tortenet">
+                            Történetünk
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="lablec-also-resz">
+            © Szent Benedek PG
+        </div>
+    </footer>
+    <div></div>
 </body>
 </html>
